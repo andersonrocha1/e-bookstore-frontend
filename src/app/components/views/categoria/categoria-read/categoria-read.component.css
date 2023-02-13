@@ -13,7 +13,33 @@
     color: floralwhite;
     font-weight: 500;
 }
+
+.stroked-button{
+  margin-bottom: .7rem;
+  background-color:cyan;
+
+}
+
 .table{
     width: 100%;
+}
+
+.livroicon{
+  color: lightcoral;
+  margin-left: .5rem;
+}
+
+.edit{
+  color: dodgerblue;
+
+}
+
+.delete{
+  color: brown;
+
+}
+
+.mat-header{
+  width: 5rem;
 }
 
