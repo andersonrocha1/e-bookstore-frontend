@@ -3,14 +3,21 @@
         "acoes",
         "AÇÕES",
         "CADASTRAR",
+        "CADASTRO",
+        "Cancelar",
         "categoria",
         "categorias",
         "descricao",
         "DESCRIÇÃO",
         "devkit",
         "ebookstore",
+        "formcat",
+        "informação",
+        "Informática",
         "livroicon",
         "livros",
-        "resposta"
+        "resposta",
+        "Salvar",
+        "sobre"
     ]
 }
