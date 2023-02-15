@@ -15,6 +15,7 @@
         "descricao",
         "DESCRIÇÃO",
         "Deseja",
+        "devem",
         "devkit",
         "ebookstore",
         "formcat",
@@ -23,10 +24,13 @@
         "livroicon",
         "livros",
         "mensagem",
+        "obrigatórios",
+        "preenchidos",
         "removida",
         "resposta",
         "Salvar",
         "sobre",
-        "sucesso"
+        "sucesso",
+        "Todos"
     ]
 }
