@@ -6,7 +6,7 @@
   <button class="mat-elevation-z8 stroked-button"  mat-stroked-button color="primary">CADASTRAR LIVRO</button>
 
   <div class="mat-elevation-z8 content-table">
-      <table class="table" mat-table>
+      <table class="table" mat-table [dataSource]="livros">
           <!-- Position Column -->
           <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
