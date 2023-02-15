@@ -9,12 +9,12 @@ import { Categoria } from './categoria.model';
 })
 export class CategoriaService {
 
-  baseUrl: String = environment.baseUrl;
+  baseUrl: String = environment.BASE_URL;
 
   constructor(private http: HttpClient) { }
 
   findAll():Observable<Categoria[]>{
-  const url = `${this.baseUrl}/categorias`
+  const url = `${this.baseUrl}categorias`
     return this.http.get<Categoria[]>(url)
   }
 }

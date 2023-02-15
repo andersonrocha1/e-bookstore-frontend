@@ -15,9 +15,16 @@ export class CategoriaService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
-  findAll():Observable<Categoria[]>{
+  findAll():Observable<Categoria[]> {
   const url = `${this.baseUrl}categorias`
     return this.http.get<Categoria[]>(url)
+  }
+
+  findById(id: String): Observable<Categoria> {
+
+    const url = `${this.baseUrl}categorias/${id}`
+    return this.http.get<Categoria>(url)
+
   }
 
   create(categoria: Categoria):Observable<Categoria> {
@@ -26,11 +33,18 @@ export class CategoriaService {
 
   }
 
+  delete(id: String):Observable<void> {
+    const url = `${this.baseUrl}categorias/${id}`
+    return this.http.delete<void>(url);
+}
+
   mensagem(msg: String): void{
       this._snack.open(`${msg}`, 'OK',{
         horizontalPosition: 'end',
         verticalPosition: 'top',
-        duration: 3000
+        duration: 6000
       })
   }
+
+
 }
