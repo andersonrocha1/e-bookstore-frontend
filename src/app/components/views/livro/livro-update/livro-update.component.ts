@@ -5,11 +5,12 @@ import { Livro } from '../livro.model';
 import { LivroService } from '../livro.service';
 
 @Component({
-  selector: 'app-livro-create',
-  templateUrl: './livro-create.component.html',
-  styleUrls: ['./livro-create.component.css']
+  selector: 'app-livro-update',
+  templateUrl: './livro-update.component.html',
+  styleUrls: ['./livro-update.component.css']
 })
-export class LivroCreateComponent implements OnInit {
+export class LivroUpdateComponent implements OnInit {
+
   cat_id: String = ''
 
   livro: Livro = {
@@ -33,15 +34,23 @@ export class LivroCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.cat_id = this.route.snapshot.paramMap.get('cat_id')!
+    this.livro.id = this.route.snapshot.paramMap.get('id')!
+    this.findById()
   }
 
-  create(): void {
-    this.service.create(this.livro, this.cat_id).subscribe((resposta) => {
-        this.router.navigate([`categorias/${this.cat_id}/livros`])
-        this.service.mensagem("Livro cadastrado com sucesso!")
+  findById(): void {
+    this.service.findById(this.livro.id!).subscribe((resposta) => {
+      this.livro = resposta
+    })
+  }
+
+  atualizar(): void {
+    this.service.atualizar(this.livro).subscribe((resposta) => {
+      this.router.navigate([`categorias/${this.cat_id}/livros`])
+      this.service.mensagem("Atualizado com sucesso!!")
     }, err => {
       this.router.navigate([`categorias/${this.cat_id}/livros`])
-      this.service.mensagem("Falha ao cadastrar livro, tente novamente!")
+      this.service.mensagem("Falha ao atualizar, tente novamente!")
     })
   }
 
